@@ -1,4 +1,4 @@
-# employee_information
+# employee_information_app
 
 Repository ini merupakan proyek latihan untuk melakukan request HTTP rest API menggunakan bahasa pemrograman Dart
 
