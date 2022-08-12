@@ -1,16 +1,12 @@
-# employee_information
+# employee_information_app
 
-A new Flutter project.
+Repository ini merupakan proyek latihan untuk melakukan request HTTP rest API menggunakan bahasa pemrograman Dart
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Referensi:
+1. https://youtu.be/CAKKMGDMfoA
+2. https://youtu.be/BiEJsLjEBDQ
+3. https://youtu.be/mehdDydxC8U
+4. https://youtu.be/FWk-rDw-6f8
+5. https://youtu.be/RQiNDOMy8Y4
+6. https://youtu.be/zWoUeSO9QvM
+7. https://youtu.be/Z7bHQrVRGDY
