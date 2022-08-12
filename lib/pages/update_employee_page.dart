@@ -14,14 +14,14 @@ class _UpdatePageState extends State<UpdatePage> {
   @override
   Widget build(BuildContext context) {
     final employeeData = ModalRoute.of(context)!.settings.arguments as Employee;
-    final _nameController = TextEditingController();
-    _nameController.text = employeeData.name;
-    final _positionController = TextEditingController();
-    _positionController.text = employeeData.position;
-    final _avatarController = TextEditingController();
-    _avatarController.text = employeeData.avatar;
-    ApiService _apiService = ApiService();
-
+    final nameController = TextEditingController();
+    nameController.text = employeeData.name;
+    final positionController = TextEditingController();
+    positionController.text = employeeData.position;
+    final avatarController = TextEditingController();
+    avatarController.text = employeeData.avatar;
+    ApiService apiService = ApiService();
+    
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -46,19 +46,19 @@ class _UpdatePageState extends State<UpdatePage> {
             const SizedBox(
               height: 10,
             ),
-            TextForm(dataController: _nameController, title: ''),
+            TextForm(dataController: nameController, title: ''),
             const SizedBox(
               height: 10,
             ),
             TextForm(
-              dataController: _avatarController,
+              dataController: avatarController,
               title: '',
             ),
             const SizedBox(
               height: 10,
             ),
             TextForm(
-              dataController: _positionController,
+              dataController: positionController,
               title: '',
             ),
             const SizedBox(
@@ -90,14 +90,15 @@ class _UpdatePageState extends State<UpdatePage> {
                           ),
                         ),
                         OutlinedButton(
+                          
                           onPressed: () async {
-                            bool _isUpdated = await _apiService.updateData(
+                            bool isUpdated = await apiService.updateData(
                                 employeeData.id,
-                                _nameController.text,
-                                _avatarController.text,
-                                _positionController.text);
+                                nameController.text,
+                                avatarController.text,
+                                positionController.text);
 
-                            if (_isUpdated) {
+                            if (isUpdated) {
                               Navigator.popAndPushNamed(context, '/');
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -109,9 +110,9 @@ class _UpdatePageState extends State<UpdatePage> {
                             } else {
                               Navigator.pop(context, false);
                             }
-                            _nameController.clear();
-                            _avatarController.clear();
-                            _positionController.clear();
+                            nameController.clear();
+                            avatarController.clear();
+                            positionController.clear();
                           },
                           child: const Text(
                             'Yes',

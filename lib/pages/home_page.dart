@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  ApiService _apiService = ApiService();
+  final _apiService = ApiService();
   late Future<List<Employee>> _employeeData;
 
   void getData() {
@@ -29,14 +29,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Employee Information App'),
+        title: const Text('Employee Information App'),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
               Navigator.pushNamed(context, '/add-page');
             },
-            icon: Icon(Icons.add_box_outlined),
+            icon: const Icon(Icons.add_box_outlined),
           )
         ],
       ),
@@ -104,10 +104,10 @@ class _HomePageState extends State<HomePage> {
                               ),
                               OutlinedButton(
                                 onPressed: () async {
-                                  bool _isDeleted = await _apiService
+                                  bool isDeleted = await _apiService
                                       .deleteData(dataEmployee[index].id);
 
-                                  if (_isDeleted) {
+                                  if (isDeleted) {
                                     Navigator.pop(context, true);
                                   } else {
                                     Navigator.pop(context, false);

@@ -12,15 +12,15 @@ class AddPage extends StatefulWidget {
 class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
-    final _nameController = TextEditingController();
-    final _positionController = TextEditingController();
-    final _avatarController = TextEditingController();
-    ApiService _apiService = ApiService();
+    final nameController = TextEditingController();
+    final positionController = TextEditingController();
+    final avatarController = TextEditingController();
+    ApiService apiService = ApiService();
 
     bool checkController() {
-      if ((_nameController.text) != '' &&
-          (_positionController.text != '') &&
-          (_avatarController.text != '')) {
+      if ((nameController.text) != '' &&
+          (positionController.text != '') &&
+          (avatarController.text != '')) {
         return true;
       } else {
         return false;
@@ -44,18 +44,17 @@ class _AddPageState extends State<AddPage> {
             const SizedBox(
               height: 10,
             ),
-            TextForm(dataController: _nameController, title: 'Employee name'),
+            TextForm(dataController: nameController, title: 'Employee name'),
             const SizedBox(
               height: 10,
             ),
             TextForm(
-                dataController: _avatarController, title: 'Employee avatar'),
+                dataController: avatarController, title: 'Employee avatar'),
             const SizedBox(
               height: 10,
             ),
             TextForm(
-                dataController: _positionController,
-                title: 'Employee position'),
+                dataController: positionController, title: 'Employee position'),
             const SizedBox(
               height: 10,
             ),
@@ -87,12 +86,12 @@ class _AddPageState extends State<AddPage> {
                           ),
                           OutlinedButton(
                             onPressed: () async {
-                              bool _isPosted = await _apiService.postData(
-                                  _nameController.text,
-                                  _positionController.text,
-                                  _avatarController.text);
+                              bool isPosted = await apiService.postData(
+                                  nameController.text,
+                                  positionController.text,
+                                  avatarController.text);
 
-                              if (_isPosted) {
+                              if (isPosted) {
                                 Navigator.popAndPushNamed(context, '/');
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
@@ -104,9 +103,9 @@ class _AddPageState extends State<AddPage> {
                               } else {
                                 Navigator.pop(context, false);
                               }
-                              _nameController.clear();
-                              _avatarController.clear();
-                              _positionController.clear();
+                              nameController.clear();
+                              avatarController.clear();
+                              positionController.clear();
                             },
                             child: const Text(
                               'Yes',
@@ -140,9 +139,6 @@ class _AddPageState extends State<AddPage> {
                     },
                   );
                 }
-                _nameController.clear();
-                _avatarController.clear();
-                _positionController.clear();
               },
               child: const Text('Submit'),
             ),

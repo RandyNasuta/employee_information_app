@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class ApiService {
-  String _url = 'https://62e5f347de23e26379250f80.mockapi.io/users';
+  final _url = 'https://62e5f347de23e26379250f80.mockapi.io/users';
 
   Future<List<Employee>> getAllData() async {
     var response = await http.get(Uri.parse(_url));
@@ -30,7 +30,7 @@ class ApiService {
   }
 
   Future<bool> updateData(String id, String name, String avatar, String position) async {
-    var response = await http.put(Uri.parse('${_url}/$id'), body: {
+    var response = await http.put(Uri.parse('$_url/$id'), body: {
       'id': id,
       'name' : name,
       'avatar' : avatar,
@@ -45,7 +45,7 @@ class ApiService {
   }
 
   Future<bool> deleteData(String id) async {
-    var response = await http.delete(Uri.parse('${_url}/$id'), body: {
+    var response = await http.delete(Uri.parse('$_url/$id'), body: {
       'id': id,
     });
 

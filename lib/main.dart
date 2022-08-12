@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (context) => HomePage(),
-        '/add-page': (context) => AddPage(),
-        '/update-page': (context) => UpdatePage(),
+        '/': (context) => const HomePage(),
+        '/add-page': (context) => const AddPage(),
+        '/update-page': (context) => const UpdatePage(),
       },
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,

@@ -20,7 +20,7 @@ class _TextFormState extends State<TextForm> {
     return TextField(
       controller: widget._dataController,
       decoration: InputDecoration(
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
         hintText: widget._title,
       ),
     );

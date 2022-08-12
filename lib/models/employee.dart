@@ -4,23 +4,23 @@ class Employee {
   String _position;
   String _id;
 
-  String get name => this._name;
-  set name(String value) => this._name = value;
+  String get name => _name;
+  set name(String value) => _name = value;
 
-  String get avatar => this._avatar;
-  set avatar(value) => this._avatar = value;
+  String get avatar => _avatar;
+  set avatar(value) => _avatar = value;
 
-  String get position => this._position;
-  set position(value) => this._position = value;
+  String get position => _position;
+  set position(value) => _position = value;
 
-  String get id => this._id;
-  set id(value) => this._id = value;
+  String get id => _id;
+  set id(value) => _id = value;
 
   Employee({name, avatar, position, id})
-      : this._name = name,
-        this._avatar = avatar,
-        this._position = position,
-        this._id = id;
+      : _name = name,
+        _avatar = avatar,
+        _position = position,
+        _id = id;
 
   factory Employee.fromJson(Map<String, dynamic> json) {
     return Employee(
