@@ -1,6 +1,6 @@
 # employee_information_app
 
-Repository ini merupakan proyek latihan untuk melakukan request HTTP rest API menggunakan bahasa pemrograman Dart
+Employee Information App with Http merupakan projek latihan untuk melakukan request HTTP rest API (CRUD) menggunakan bahasa pemrograman Dart dan mockAPI.
 
 Video showcase aplikasi: https://youtu.be/zbqshp1mb88
 
